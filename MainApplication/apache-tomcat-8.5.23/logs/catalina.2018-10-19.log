@@ -1,0 +1,4 @@
+19-Oct-2018 04:55:50.987 SEVERE [ajp-nio-8009-exec-2] org.apache.coyote.ajp.AjpMessage.processHeader Invalid message received with signature [5635]
+19-Oct-2018 04:55:51.320 SEVERE [ajp-nio-8009-exec-4] org.apache.coyote.ajp.AjpMessage.processHeader Invalid message received with signature [18245]
+19-Oct-2018 17:51:43.322 SEVERE [ajp-nio-8009-exec-5] org.apache.coyote.ajp.AjpMessage.processHeader Invalid message received with signature [18245]
+19-Oct-2018 23:35:42.070 SEVERE [ajp-nio-8009-exec-6] org.apache.coyote.ajp.AjpMessage.processHeader Invalid message received with signature [768]

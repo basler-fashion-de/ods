@@ -1,0 +1,295 @@
+15-Nov-2018 00:15:58.929 SEVERE [ajp-nio-8009-exec-3] org.apache.coyote.ajp.AjpMessage.processHeader Invalid message received with signature [18245]
+15-Nov-2018 04:54:28.075 SEVERE [ajp-nio-8009-exec-2] org.apache.coyote.ajp.AjpMessage.processHeader Invalid message received with signature [18245]
+15-Nov-2018 09:35:30.186 SEVERE [ajp-nio-8009-exec-4] org.apache.coyote.ajp.AjpMessage.processHeader Invalid message received with signature [18245]
+15-Nov-2018 13:04:35.410 SEVERE [ajp-nio-8009-exec-5] org.apache.coyote.ajp.AjpMessage.processHeader Invalid message received with signature [5635]
+15-Nov-2018 13:07:50.498 SEVERE [ajp-nio-8009-exec-6] org.apache.coyote.ajp.AjpMessage.processHeader Invalid message received with signature [18245]
+15-Nov-2018 14:07:39.316 SEVERE [ajp-nio-8009-exec-7] org.apache.coyote.ajp.AjpMessage.processHeader Invalid message received with signature [18245]
+15-Nov-2018 15:38:37.075 INFO [http-nio-8080-exec-8] org.restlet.engine.log.LogFilter.afterHandle 2018-11-15	15:38:37	88.130.55.84	-	165.227.174.29	8080	GET	/api/config	-	200	-	0	74	http://165.227.174.29:8080	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0	http://165.227.174.29:8080/
+15-Nov-2018 15:38:52.303 INFO [http-nio-8080-exec-3] org.restlet.engine.log.LogFilter.afterHandle 2018-11-15	15:38:52	88.130.55.84	-	165.227.174.29	8080	POST	/api/pdf	-	200	-	49	168	http://165.227.174.29:8080	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0	http://165.227.174.29:8080/
+15-Nov-2018 15:38:52.866 SEVERE [Thread-78] com.blauband.ods.downloader.ImageDownloder.download Image was not found.
+ java.io.FileNotFoundException: http://52870291.swh.strato-hosting.eu/mk_img/932-100_2.jpg
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1890)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
+	at java.net.URL.openStream(URL.java:1045)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:54)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:93)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:85)
+	at com.blauband.ods.converter.PdfConverterResource.lambda$upload$0(PdfConverterResource.java:45)
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1626)
+	at java.lang.Thread.run(Thread.java:748)
+
+15-Nov-2018 15:38:52.877 SEVERE [Thread-78] com.blauband.ods.downloader.ImageDownloder.download Image was not found.
+ java.io.FileNotFoundException: http://52870291.swh.strato-hosting.eu/mk_img/932-202.jpg
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1890)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
+	at java.net.URL.openStream(URL.java:1045)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:54)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:93)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:85)
+	at com.blauband.ods.converter.PdfConverterResource.lambda$upload$0(PdfConverterResource.java:45)
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1626)
+	at java.lang.Thread.run(Thread.java:748)
+
+15-Nov-2018 15:38:52.886 SEVERE [Thread-78] com.blauband.ods.downloader.ImageDownloder.download Image was not found.
+ java.io.FileNotFoundException: http://52870291.swh.strato-hosting.eu/mk_img/932-202_2.jpg
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1890)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
+	at java.net.URL.openStream(URL.java:1045)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:54)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:93)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:85)
+	at com.blauband.ods.converter.PdfConverterResource.lambda$upload$0(PdfConverterResource.java:45)
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1626)
+	at java.lang.Thread.run(Thread.java:748)
+
+15-Nov-2018 15:38:53.030 SEVERE [Thread-78] com.blauband.ods.downloader.ImageDownloder.download Image was not found.
+ java.io.FileNotFoundException: http://52870291.swh.strato-hosting.eu/mk_img/932-600_2.jpg
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1890)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
+	at java.net.URL.openStream(URL.java:1045)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:54)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:93)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:85)
+	at com.blauband.ods.converter.PdfConverterResource.lambda$upload$0(PdfConverterResource.java:45)
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1626)
+	at java.lang.Thread.run(Thread.java:748)
+
+15-Nov-2018 15:38:53.213 SEVERE [Thread-78] com.blauband.ods.downloader.ImageDownloder.download Image was not found.
+ java.io.FileNotFoundException: http://52870291.swh.strato-hosting.eu/mk_img/931-100_2.jpg
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1890)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
+	at java.net.URL.openStream(URL.java:1045)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:54)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:93)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:85)
+	at com.blauband.ods.converter.PdfConverterResource.lambda$upload$0(PdfConverterResource.java:45)
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1626)
+	at java.lang.Thread.run(Thread.java:748)
+
+15-Nov-2018 15:38:53.307 SEVERE [Thread-78] com.blauband.ods.downloader.ImageDownloder.download Image was not found.
+ java.io.FileNotFoundException: http://52870291.swh.strato-hosting.eu/mk_img/931-106_2.jpg
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1890)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
+	at java.net.URL.openStream(URL.java:1045)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:54)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:93)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:85)
+	at com.blauband.ods.converter.PdfConverterResource.lambda$upload$0(PdfConverterResource.java:45)
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1626)
+	at java.lang.Thread.run(Thread.java:748)
+
+15-Nov-2018 15:38:53.353 INFO [http-nio-8080-exec-2] org.restlet.engine.log.LogFilter.afterHandle 2018-11-15	15:38:53	88.130.55.84	-	165.227.174.29	8080	GET	/api/pdf	-	200	-	0	1	http://165.227.174.29:8080	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0	http://165.227.174.29:8080/
+15-Nov-2018 15:38:53.449 SEVERE [Thread-78] com.blauband.ods.downloader.ImageDownloder.download Image was not found.
+ java.io.FileNotFoundException: http://52870291.swh.strato-hosting.eu/mk_img/931-114_2.jpg
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1890)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
+	at java.net.URL.openStream(URL.java:1045)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:54)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:93)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:85)
+	at com.blauband.ods.converter.PdfConverterResource.lambda$upload$0(PdfConverterResource.java:45)
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1626)
+	at java.lang.Thread.run(Thread.java:748)
+
+15-Nov-2018 15:38:53.533 SEVERE [Thread-78] com.blauband.ods.downloader.ImageDownloder.download Image was not found.
+ java.io.FileNotFoundException: http://52870291.swh.strato-hosting.eu/mk_img/931-117_2.jpg
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1890)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
+	at java.net.URL.openStream(URL.java:1045)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:54)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:93)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:85)
+	at com.blauband.ods.converter.PdfConverterResource.lambda$upload$0(PdfConverterResource.java:45)
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1626)
+	at java.lang.Thread.run(Thread.java:748)
+
+15-Nov-2018 15:38:53.685 SEVERE [Thread-78] com.blauband.ods.downloader.ImageDownloder.download Image was not found.
+ java.io.FileNotFoundException: http://52870291.swh.strato-hosting.eu/mk_img/931-408_2.jpg
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1890)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
+	at java.net.URL.openStream(URL.java:1045)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:54)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:93)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:85)
+	at com.blauband.ods.converter.PdfConverterResource.lambda$upload$0(PdfConverterResource.java:45)
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1626)
+	at java.lang.Thread.run(Thread.java:748)
+
+15-Nov-2018 15:38:53.975 SEVERE [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent Image not found. URI: /opt/apache-tomcat-8.5.23/webapps/files/932-100_2.jpg. (No context info available)
+15-Nov-2018 15:38:53.978 SEVERE [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent Image not found. URI: /opt/apache-tomcat-8.5.23/webapps/files/932-202.jpg. (No context info available)
+15-Nov-2018 15:38:53.979 SEVERE [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent Image not found. URI: /opt/apache-tomcat-8.5.23/webapps/files/932-202_2.jpg. (No context info available)
+15-Nov-2018 15:38:53.980 SEVERE [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent Image not found. URI: /opt/apache-tomcat-8.5.23/webapps/files/932-600_2.jpg. (No context info available)
+15-Nov-2018 15:38:53.982 SEVERE [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent Image not found. URI: /opt/apache-tomcat-8.5.23/webapps/files/931-100_2.jpg. (No context info available)
+15-Nov-2018 15:38:53.984 SEVERE [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent Image not found. URI: /opt/apache-tomcat-8.5.23/webapps/files/931-106_2.jpg. (No context info available)
+15-Nov-2018 15:38:53.986 SEVERE [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent Image not found. URI: /opt/apache-tomcat-8.5.23/webapps/files/931-114_2.jpg. (No context info available)
+15-Nov-2018 15:38:53.990 SEVERE [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent Image not found. URI: /opt/apache-tomcat-8.5.23/webapps/files/931-117_2.jpg. (No context info available)
+15-Nov-2018 15:38:53.992 SEVERE [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent Image not found. URI: /opt/apache-tomcat-8.5.23/webapps/files/931-408_2.jpg. (No context info available)
+15-Nov-2018 15:38:53.998 WARNING [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent "fo:table-cell" is missing child elements. Required content model: marker* (%block;)+ (No context info available)
+15-Nov-2018 15:38:54.017 INFO [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent table-layout="fixed" and width="auto", but auto-layout not supported => assuming width="100%". (No context info available)
+15-Nov-2018 15:38:54.019 INFO [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent table-layout="fixed" and width="auto", but auto-layout not supported => assuming width="100%". (No context info available)
+15-Nov-2018 15:38:54.020 INFO [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent table-layout="fixed" and width="auto", but auto-layout not supported => assuming width="100%". (No context info available)
+15-Nov-2018 15:38:54.021 INFO [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent table-layout="fixed" and width="auto", but auto-layout not supported => assuming width="100%". (No context info available)
+15-Nov-2018 15:38:54.022 INFO [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent table-layout="fixed" and width="auto", but auto-layout not supported => assuming width="100%". (No context info available)
+15-Nov-2018 15:38:54.022 INFO [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent table-layout="fixed" and width="auto", but auto-layout not supported => assuming width="100%". (No context info available)
+15-Nov-2018 15:38:54.026 WARNING [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent Font "Symbol,normal,700" not found. Substituting with "Symbol,normal,400".
+15-Nov-2018 15:38:54.026 WARNING [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent Font "ZapfDingbats,normal,700" not found. Substituting with "ZapfDingbats,normal,400".
+15-Nov-2018 15:38:54.030 INFO [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent table-layout="fixed" and width="auto", but auto-layout not supported => assuming width="100%". (No context info available)
+15-Nov-2018 15:38:54.030 INFO [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent table-layout="fixed" and width="auto", but auto-layout not supported => assuming width="100%". (No context info available)
+15-Nov-2018 15:38:54.031 INFO [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent table-layout="fixed" and width="auto", but auto-layout not supported => assuming width="100%". (No context info available)
+15-Nov-2018 15:38:54.031 INFO [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent table-layout="fixed" and width="auto", but auto-layout not supported => assuming width="100%". (No context info available)
+15-Nov-2018 15:38:54.032 INFO [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent table-layout="fixed" and width="auto", but auto-layout not supported => assuming width="100%". (No context info available)
+15-Nov-2018 15:38:54.034 INFO [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent table-layout="fixed" and width="auto", but auto-layout not supported => assuming width="100%". (No context info available)
+15-Nov-2018 15:38:54.034 INFO [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent table-layout="fixed" and width="auto", but auto-layout not supported => assuming width="100%". (No context info available)
+15-Nov-2018 15:38:54.047 INFO [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent Rendered page #1.
+15-Nov-2018 15:38:54.075 INFO [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent Rendered page #2.
+15-Nov-2018 15:38:54.076 INFO [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent Rendered page #3.
+15-Nov-2018 15:38:54.081 SEVERE [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent Image not found. URI: /opt/apache-tomcat-8.5.23/webapps/files/932-100_2.jpg. (No context info available)
+15-Nov-2018 15:38:54.081 SEVERE [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent Image not found. URI: /opt/apache-tomcat-8.5.23/webapps/files/932-202.jpg. (No context info available)
+15-Nov-2018 15:38:54.081 SEVERE [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent Image not found. URI: /opt/apache-tomcat-8.5.23/webapps/files/932-202_2.jpg. (No context info available)
+15-Nov-2018 15:38:54.082 SEVERE [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent Image not found. URI: /opt/apache-tomcat-8.5.23/webapps/files/932-600_2.jpg. (No context info available)
+15-Nov-2018 15:38:54.083 SEVERE [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent Image not found. URI: /opt/apache-tomcat-8.5.23/webapps/files/931-100_2.jpg. (No context info available)
+15-Nov-2018 15:38:54.087 INFO [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent Rendered page #4.
+15-Nov-2018 15:38:54.088 SEVERE [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent Image not found. URI: /opt/apache-tomcat-8.5.23/webapps/files/931-106_2.jpg. (No context info available)
+15-Nov-2018 15:38:54.089 SEVERE [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent Image not found. URI: /opt/apache-tomcat-8.5.23/webapps/files/931-114_2.jpg. (No context info available)
+15-Nov-2018 15:38:54.090 SEVERE [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent Image not found. URI: /opt/apache-tomcat-8.5.23/webapps/files/931-117_2.jpg. (No context info available)
+15-Nov-2018 15:38:54.091 SEVERE [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent Image not found. URI: /opt/apache-tomcat-8.5.23/webapps/files/931-408_2.jpg. (No context info available)
+15-Nov-2018 15:38:54.091 INFO [Thread-78] org.apache.fop.events.LoggingEventListener.processEvent Rendered page #5.
+15-Nov-2018 15:38:54.392 INFO [http-nio-8080-exec-7] org.restlet.engine.log.LogFilter.afterHandle 2018-11-15	15:38:54	88.130.55.84	-	165.227.174.29	8080	GET	/api/pdf	-	200	-	0	0	http://165.227.174.29:8080	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0	http://165.227.174.29:8080/
+15-Nov-2018 15:40:03.211 INFO [http-nio-8080-exec-8] org.restlet.engine.log.LogFilter.afterHandle 2018-11-15	15:40:03	88.130.55.84	-	165.227.174.29	8080	GET	/api/config	-	200	-	0	0	http://165.227.174.29:8080	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0	http://165.227.174.29:8080/
+15-Nov-2018 15:40:08.726 INFO [http-nio-8080-exec-7] org.restlet.engine.log.LogFilter.afterHandle 2018-11-15	15:40:08	88.130.55.84	-	165.227.174.29	8080	POST	/api/pdf	-	200	-	49	8	http://165.227.174.29:8080	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0	http://165.227.174.29:8080/
+15-Nov-2018 15:40:08.803 SEVERE [Thread-79] com.blauband.ods.downloader.ImageDownloder.download Image was not found.
+ java.io.FileNotFoundException: http://52870291.swh.strato-hosting.eu/mk_img/932-100_2.jpg
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1890)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
+	at java.net.URL.openStream(URL.java:1045)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:54)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:93)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:85)
+	at com.blauband.ods.converter.PdfConverterResource.lambda$upload$0(PdfConverterResource.java:45)
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1626)
+	at java.lang.Thread.run(Thread.java:748)
+
+15-Nov-2018 15:40:08.987 SEVERE [Thread-79] com.blauband.ods.downloader.ImageDownloder.download Image was not found.
+ java.io.FileNotFoundException: http://52870291.swh.strato-hosting.eu/mk_img/932-405_2.jpg
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1890)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
+	at java.net.URL.openStream(URL.java:1045)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:54)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:93)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:85)
+	at com.blauband.ods.converter.PdfConverterResource.lambda$upload$0(PdfConverterResource.java:45)
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1626)
+	at java.lang.Thread.run(Thread.java:748)
+
+15-Nov-2018 15:40:08.995 SEVERE [Thread-79] com.blauband.ods.downloader.ImageDownloder.download Image was not found.
+ java.io.FileNotFoundException: http://52870291.swh.strato-hosting.eu/mk_img/932-600_2.jpg
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1890)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
+	at java.net.URL.openStream(URL.java:1045)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:54)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:93)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:85)
+	at com.blauband.ods.converter.PdfConverterResource.lambda$upload$0(PdfConverterResource.java:45)
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1626)
+	at java.lang.Thread.run(Thread.java:748)
+
+15-Nov-2018 15:40:09.003 SEVERE [Thread-79] com.blauband.ods.downloader.ImageDownloder.download Image was not found.
+ java.io.FileNotFoundException: http://52870291.swh.strato-hosting.eu/mk_img/931-100_2.jpg
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1890)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
+	at java.net.URL.openStream(URL.java:1045)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:54)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:93)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:85)
+	at com.blauband.ods.converter.PdfConverterResource.lambda$upload$0(PdfConverterResource.java:45)
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1626)
+	at java.lang.Thread.run(Thread.java:748)
+
+15-Nov-2018 15:40:09.014 SEVERE [Thread-79] com.blauband.ods.downloader.ImageDownloder.download Image was not found.
+ java.io.FileNotFoundException: http://52870291.swh.strato-hosting.eu/mk_img/931-106_2.jpg
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1890)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
+	at java.net.URL.openStream(URL.java:1045)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:54)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:93)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:85)
+	at com.blauband.ods.converter.PdfConverterResource.lambda$upload$0(PdfConverterResource.java:45)
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1626)
+	at java.lang.Thread.run(Thread.java:748)
+
+15-Nov-2018 15:40:09.023 SEVERE [Thread-79] com.blauband.ods.downloader.ImageDownloder.download Image was not found.
+ java.io.FileNotFoundException: http://52870291.swh.strato-hosting.eu/mk_img/931-114_2.jpg
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1890)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
+	at java.net.URL.openStream(URL.java:1045)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:54)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:93)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:85)
+	at com.blauband.ods.converter.PdfConverterResource.lambda$upload$0(PdfConverterResource.java:45)
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1626)
+	at java.lang.Thread.run(Thread.java:748)
+
+15-Nov-2018 15:40:09.031 SEVERE [Thread-79] com.blauband.ods.downloader.ImageDownloder.download Image was not found.
+ java.io.FileNotFoundException: http://52870291.swh.strato-hosting.eu/mk_img/931-117_2.jpg
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1890)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
+	at java.net.URL.openStream(URL.java:1045)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:54)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:93)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:85)
+	at com.blauband.ods.converter.PdfConverterResource.lambda$upload$0(PdfConverterResource.java:45)
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1626)
+	at java.lang.Thread.run(Thread.java:748)
+
+15-Nov-2018 15:40:09.039 SEVERE [Thread-79] com.blauband.ods.downloader.ImageDownloder.download Image was not found.
+ java.io.FileNotFoundException: http://52870291.swh.strato-hosting.eu/mk_img/931-408_2.jpg
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1890)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
+	at java.net.URL.openStream(URL.java:1045)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:54)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:93)
+	at com.blauband.ods.downloader.ImageDownloder.download(ImageDownloder.java:85)
+	at com.blauband.ods.converter.PdfConverterResource.lambda$upload$0(PdfConverterResource.java:45)
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1626)
+	at java.lang.Thread.run(Thread.java:748)
+
+15-Nov-2018 15:40:09.092 SEVERE [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent Image not found. URI: /opt/apache-tomcat-8.5.23/webapps/files/932-100_2.jpg. (No context info available)
+15-Nov-2018 15:40:09.097 SEVERE [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent Image not found. URI: /opt/apache-tomcat-8.5.23/webapps/files/932-405_2.jpg. (No context info available)
+15-Nov-2018 15:40:09.103 SEVERE [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent Image not found. URI: /opt/apache-tomcat-8.5.23/webapps/files/932-600_2.jpg. (No context info available)
+15-Nov-2018 15:40:09.105 SEVERE [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent Image not found. URI: /opt/apache-tomcat-8.5.23/webapps/files/931-100_2.jpg. (No context info available)
+15-Nov-2018 15:40:09.107 SEVERE [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent Image not found. URI: /opt/apache-tomcat-8.5.23/webapps/files/931-106_2.jpg. (No context info available)
+15-Nov-2018 15:40:09.109 SEVERE [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent Image not found. URI: /opt/apache-tomcat-8.5.23/webapps/files/931-114_2.jpg. (No context info available)
+15-Nov-2018 15:40:09.114 SEVERE [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent Image not found. URI: /opt/apache-tomcat-8.5.23/webapps/files/931-117_2.jpg. (No context info available)
+15-Nov-2018 15:40:09.115 SEVERE [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent Image not found. URI: /opt/apache-tomcat-8.5.23/webapps/files/931-408_2.jpg. (No context info available)
+15-Nov-2018 15:40:09.116 WARNING [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent "fo:table-cell" is missing child elements. Required content model: marker* (%block;)+ (No context info available)
+15-Nov-2018 15:40:09.118 INFO [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent table-layout="fixed" and width="auto", but auto-layout not supported => assuming width="100%". (No context info available)
+15-Nov-2018 15:40:09.118 INFO [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent table-layout="fixed" and width="auto", but auto-layout not supported => assuming width="100%". (No context info available)
+15-Nov-2018 15:40:09.119 INFO [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent table-layout="fixed" and width="auto", but auto-layout not supported => assuming width="100%". (No context info available)
+15-Nov-2018 15:40:09.119 INFO [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent table-layout="fixed" and width="auto", but auto-layout not supported => assuming width="100%". (No context info available)
+15-Nov-2018 15:40:09.119 INFO [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent table-layout="fixed" and width="auto", but auto-layout not supported => assuming width="100%". (No context info available)
+15-Nov-2018 15:40:09.120 INFO [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent table-layout="fixed" and width="auto", but auto-layout not supported => assuming width="100%". (No context info available)
+15-Nov-2018 15:40:09.120 WARNING [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent Font "Symbol,normal,700" not found. Substituting with "Symbol,normal,400".
+15-Nov-2018 15:40:09.120 WARNING [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent Font "ZapfDingbats,normal,700" not found. Substituting with "ZapfDingbats,normal,400".
+15-Nov-2018 15:40:09.123 INFO [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent table-layout="fixed" and width="auto", but auto-layout not supported => assuming width="100%". (No context info available)
+15-Nov-2018 15:40:09.123 INFO [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent table-layout="fixed" and width="auto", but auto-layout not supported => assuming width="100%". (No context info available)
+15-Nov-2018 15:40:09.124 INFO [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent table-layout="fixed" and width="auto", but auto-layout not supported => assuming width="100%". (No context info available)
+15-Nov-2018 15:40:09.124 INFO [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent table-layout="fixed" and width="auto", but auto-layout not supported => assuming width="100%". (No context info available)
+15-Nov-2018 15:40:09.124 INFO [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent table-layout="fixed" and width="auto", but auto-layout not supported => assuming width="100%". (No context info available)
+15-Nov-2018 15:40:09.125 INFO [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent table-layout="fixed" and width="auto", but auto-layout not supported => assuming width="100%". (No context info available)
+15-Nov-2018 15:40:09.125 INFO [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent table-layout="fixed" and width="auto", but auto-layout not supported => assuming width="100%". (No context info available)
+15-Nov-2018 15:40:09.130 INFO [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent Rendered page #1.
+15-Nov-2018 15:40:09.183 INFO [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent Rendered page #2.
+15-Nov-2018 15:40:09.183 INFO [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent Rendered page #3.
+15-Nov-2018 15:40:09.185 SEVERE [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent Image not found. URI: /opt/apache-tomcat-8.5.23/webapps/files/932-100_2.jpg. (No context info available)
+15-Nov-2018 15:40:09.185 SEVERE [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent Image not found. URI: /opt/apache-tomcat-8.5.23/webapps/files/932-405_2.jpg. (No context info available)
+15-Nov-2018 15:40:09.186 SEVERE [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent Image not found. URI: /opt/apache-tomcat-8.5.23/webapps/files/932-600_2.jpg. (No context info available)
+15-Nov-2018 15:40:09.187 SEVERE [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent Image not found. URI: /opt/apache-tomcat-8.5.23/webapps/files/931-100_2.jpg. (No context info available)
+15-Nov-2018 15:40:09.188 INFO [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent Rendered page #4.
+15-Nov-2018 15:40:09.189 SEVERE [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent Image not found. URI: /opt/apache-tomcat-8.5.23/webapps/files/931-106_2.jpg. (No context info available)
+15-Nov-2018 15:40:09.190 SEVERE [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent Image not found. URI: /opt/apache-tomcat-8.5.23/webapps/files/931-114_2.jpg. (No context info available)
+15-Nov-2018 15:40:09.190 SEVERE [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent Image not found. URI: /opt/apache-tomcat-8.5.23/webapps/files/931-117_2.jpg. (No context info available)
+15-Nov-2018 15:40:09.191 SEVERE [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent Image not found. URI: /opt/apache-tomcat-8.5.23/webapps/files/931-408_2.jpg. (No context info available)
+15-Nov-2018 15:40:09.192 INFO [Thread-79] org.apache.fop.events.LoggingEventListener.processEvent Rendered page #5.
+15-Nov-2018 15:40:09.772 INFO [http-nio-8080-exec-6] org.restlet.engine.log.LogFilter.afterHandle 2018-11-15	15:40:09	88.130.55.84	-	165.227.174.29	8080	GET	/api/pdf	-	200	-	0	0	http://165.227.174.29:8080	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0	http://165.227.174.29:8080/
+15-Nov-2018 18:47:27.744 SEVERE [ajp-nio-8009-exec-8] org.apache.coyote.ajp.AjpMessage.processHeader Invalid message received with signature [18245]
+15-Nov-2018 23:27:15.227 SEVERE [ajp-nio-8009-exec-9] org.apache.coyote.ajp.AjpMessage.processHeader Invalid message received with signature [18245]

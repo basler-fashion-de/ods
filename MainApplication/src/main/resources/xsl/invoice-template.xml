@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.1" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:fo="http://www.w3.org/1999/XSL/Format"
+                exclude-result-prefixes="fo" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://www.w3.org/1999/XSL/Format ">
+    <xsl:output method="xml" version="1.0" omit-xml-declaration="no" indent="yes"/>
+
+
+    <xsl:template name="format-dateTime">
+        <xsl:param name="date" />
+
+        <xsl:variable name="MM">
+            <xsl:value-of select="substring($date,6,2)" />
+        </xsl:variable>
+
+        <xsl:variable name="dd">
+            <xsl:value-of select="substring($date,9,2)" />
+        </xsl:variable>
+
+        <xsl:variable name="yyyy">
+            <xsl:value-of select="substring($date,1,4)" />
+        </xsl:variable>
+
+        <xsl:variable name="HH">
+            <xsl:value-of select="substring($date,12,2)" />
+        </xsl:variable>
+
+        <xsl:variable name="mm">
+            <xsl:value-of select="substring($date,15,2)" />
+        </xsl:variable>
+
+        <xsl:value-of select="concat($dd, '.', $MM, '.', $yyyy, ' ', $HH, ':', $mm)" />
+    </xsl:template>
+
+    <xsl:template name="format-date">
+        <xsl:param name="date" />
+
+        <xsl:variable name="MM">
+            <xsl:value-of select="substring($date,6,2)" />
+        </xsl:variable>
+
+        <xsl:variable name="dd">
+            <xsl:value-of select="substring($date,9,2)" />
+        </xsl:variable>
+
+        <xsl:variable name="yyyy">
+            <xsl:value-of select="substring($date,1,4)" />
+        </xsl:variable>
+
+        <xsl:value-of select="concat($dd,'.',$MM,'.',$yyyy)" />
+    </xsl:template>
+
+    <xsl:template name="format-notice">
+        <xsl:param name="string" />
+
+        <xsl:variable name="max_length">
+            <xsl:value-of select="98" />
+        </xsl:variable>
+
+        <xsl:if test="$max_length > string-length($string)">
+            <xsl:value-of select="string-length($string)"/>
+            <!--<xsl:value-of select="$string"/>-->
+        </xsl:if>
+
+        <xsl:if test="string-length($string) > $max_length">
+            <xsl:value-of select="concat(substring($string, 1, $max_length), '...')"/>
+        </xsl:if>
+    </xsl:template>
+
+    <xsl:attribute-set name="header">
+        <xsl:attribute name="margin-left">3.5%</xsl:attribute>
+        <xsl:attribute name="margin-right">7%</xsl:attribute>
+        <xsl:attribute name="width">89.5%</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="body">
+        <xsl:attribute name="margin-left">3.5%</xsl:attribute>
+        <xsl:attribute name="margin-right">7%</xsl:attribute>
+        <xsl:attribute name="width">89.5%</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="footer">
+        <xsl:attribute name="font-size">10px</xsl:attribute>
+        <xsl:attribute name="margin-top">20px</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="footer-address">
+        <xsl:attribute name="margin-top">5px</xsl:attribute>
+        <xsl:attribute name="text-align">center</xsl:attribute>
+        <xsl:attribute name="color">#454545</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="info-box">
+        <xsl:attribute name="width">250px</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="table-cell">
+        <xsl:attribute name="margin">0px</xsl:attribute>
+        <xsl:attribute name="padding">0px</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="label-1">
+        <xsl:attribute name="text-align">right</xsl:attribute>
+        <xsl:attribute name="margin-right">35px</xsl:attribute>
+        <xsl:attribute name="font-size">20px</xsl:attribute>
+        <xsl:attribute name="font-weight">bold</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="label-2">
+        <xsl:attribute name="text-align">left</xsl:attribute>
+        <xsl:attribute name="тщешfont-size">10px</xsl:attribute>
+        <xsl:attribute name="font-weight">bold</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="label-3">
+        <xsl:attribute name="text-align">left</xsl:attribute>
+        <xsl:attribute name="font-size">10px</xsl:attribute>
+        <xsl:attribute name="margin-bottom">8px</xsl:attribute>
+        <xsl:attribute name="margin-left">7px</xsl:attribute>
+        <xsl:attribute name="text-transform">uppercase</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="label-4">
+        <xsl:attribute name="text-align">left</xsl:attribute>
+        <xsl:attribute name="font-size">12px</xsl:attribute>
+        <xsl:attribute name="font-weight">bold</xsl:attribute>
+        <xsl:attribute name="margin-top">8px</xsl:attribute>
+        <xsl:attribute name="margin-left">7px</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="label-5">
+        <xsl:attribute name="text-align">center</xsl:attribute>
+        <xsl:attribute name="font-size">12px</xsl:attribute>
+        <xsl:attribute name="font-weight">bold</xsl:attribute>
+        <xsl:attribute name="text-transform">uppercase</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="label-6" use-attribute-sets="label-5">
+        <xsl:attribute name="line-height">30px</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="line">
+        <xsl:attribute name="border">solid 1px black</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="address">
+        <xsl:attribute name="margin-left">7px</xsl:attribute>
+        <xsl:attribute name="margin-top">5px</xsl:attribute>
+        <xsl:attribute name="font-size">10px</xsl:attribute>
+        <xsl:attribute name="text-align">left</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="trip-table">
+        <xsl:attribute name="margin-top">15px</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="trip-table-cell">
+        <xsl:attribute name="margin">0px</xsl:attribute>
+        <xsl:attribute name="padding-top">5px</xsl:attribute>
+        <xsl:attribute name="padding-bottom">5px</xsl:attribute>
+        <xsl:attribute name="padding-left">3px</xsl:attribute>
+        <xsl:attribute name="padding-right">3px</xsl:attribute>
+        <xsl:attribute name="display-align">center</xsl:attribute>
+        <xsl:attribute name="text-align">center</xsl:attribute>
+        <xsl:attribute name="border-top">3px solid white</xsl:attribute>
+        <xsl:attribute name="border-bottom">3px solid white</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="trip-table-cell-grey" use-attribute-sets="trip-table-cell-last-column">
+        <xsl:attribute name="border-right">1px solid yellow</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="trip-table-cell-last-column" use-attribute-sets="trip-table-cell">
+        <xsl:attribute name="background-color">#efefef</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="notice">
+        <xsl:attribute name="font-size">10px</xsl:attribute>
+        <xsl:attribute name="height">24px</xsl:attribute>
+        <xsl:attribute name="overflow">hidden</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="info-paragraph">
+        <xsl:attribute name="margin-left">7px</xsl:attribute>
+        <xsl:attribute name="margin-top">15px</xsl:attribute>
+        <xsl:attribute name="font-size">12px</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="trip-details">
+        <xsl:attribute name="margin-top">45px</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="trip-details-header">
+        <xsl:attribute name="margin-bottom">5px</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="trip-details-header-1">
+        <xsl:attribute name="background-color">black</xsl:attribute>
+        <xsl:attribute name="color">white</xsl:attribute>
+        <xsl:attribute name="line-height">25px</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="trip-details-header-2">
+        <xsl:attribute name="color">#541764</xsl:attribute>
+        <xsl:attribute name="border-bottom">2px solid #541764</xsl:attribute>
+        <xsl:attribute name="line-height">25px</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="trip-details-table-cell">
+        <xsl:attribute name="height">20px</xsl:attribute>
+        <xsl:attribute name="display-align">center</xsl:attribute>
+        <xsl:attribute name="text-align">left</xsl:attribute>
+        <xsl:attribute name="background-color">#efefef</xsl:attribute>
+        <xsl:attribute name="border-bottom">2px solid white</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="trip-details-table-cell-left" use-attribute-sets="trip-details-table-cell">
+        <xsl:attribute name="border-right">2px solid white</xsl:attribute>
+        <xsl:attribute name="text-transform">uppercase</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:attribute-set name="trip-details-table-cell-right" use-attribute-sets="trip-details-table-cell">
+        <xsl:attribute name="border-left">2px solid white</xsl:attribute>
+    </xsl:attribute-set>
+
+    <xsl:template match="invoice">
+        <fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+            <fo:layout-master-set>
+                <fo:simple-page-master master-name="A4" margin-top="5%" margin-bottom="77px">
+                    <fo:region-body region-name="xsl-region-body" margin-bottom="30px" margin-top="80px"/>
+                    <fo:region-before region-name="xsl-region-before" extent="5in"/>
+                    <fo:region-after region-name="xsl-region-after" extent=".5in" margin-top="20px"/>
+                </fo:simple-page-master>
+            </fo:layout-master-set>
+            <fo:page-sequence master-reference="A4" initial-page-number="1">
+                <fo:static-content flow-name="xsl-region-before">
+                    <fo:block xsl:use-attribute-sets="header">
+                        <fo:table table-layout="fixed">
+                            <fo:table-body>
+                                <fo:table-row>
+                                    <fo:table-cell xsl:use-attribute-sets="table-cell" width="275px">
+                                        <fo:block>
+                                            <!--<fo:external-graphic scaling="uniform" content-width="scale-to-fit"
+                                                                 src="url(images/logo.png)"
+                                                                 width="100%" height="100%"/>-->
+
+                                            <fo:external-graphic scaling="uniform" content-width="scale-to-fit"
+                                                                 src="url(https://s3-eu-west-1.amazonaws.com/examotive-test/images/logo.png)"
+                                                                 width="100%" height="100%"/>
+                                        </fo:block>
+                                    </fo:table-cell>
+                                    <fo:table-cell xsl:use-attribute-sets="table-cell">
+                                        <fo:block></fo:block>
+                                    </fo:table-cell>
+                                    <fo:table-cell xsl:use-attribute-sets="table-cell" width="170px">
+                                        <fo:block margin-top="10px">
+                                            <fo:block xsl:use-attribute-sets="label-1">
+                                                <fo:inline>Invoice</fo:inline>
+                                            </fo:block>
+                                            <fo:table table-layout="fixed">
+                                                <fo:table-body font-size="10px">
+                                                    <fo:table-row>
+                                                        <fo:table-cell xsl:use-attribute-sets="table-cell" width="95px"
+                                                                       height="20px">
+                                                            <fo:block xsl:use-attribute-sets="label-2">
+                                                                Invoice Number:
+                                                            </fo:block>
+                                                        </fo:table-cell>
+                                                        <fo:table-cell xsl:use-attribute-sets="table-cell"
+                                                                       text-align="right">
+                                                            <fo:block>
+                                                                <xsl:value-of select="/invoice/number"/>
+                                                            </fo:block>
+                                                        </fo:table-cell>
+                                                    </fo:table-row>
+                                                    <fo:table-row>
+                                                        <fo:table-cell xsl:use-attribute-sets="table-cell">
+                                                            <fo:block xsl:use-attribute-sets="label-2">
+                                                                <fo:inline>Invoice Date:</fo:inline>
+                                                            </fo:block>
+                                                        </fo:table-cell>
+                                                        <fo:table-cell xsl:use-attribute-sets="table-cell"
+                                                                       text-align="right">
+                                                            <fo:block>
+                                                                <fo:inline>
+                                                                    <xsl:call-template name="format-date">
+                                                                        <xsl:with-param name="date" select="/invoice/date"/>
+                                                                    </xsl:call-template>
+                                                                </fo:inline>
+                                                            </fo:block>
+                                                        </fo:table-cell>
+                                                    </fo:table-row>
+                                                </fo:table-body>
+                                            </fo:table>
+                                        </fo:block>
+                                    </fo:table-cell>
+                                </fo:table-row>
+                            </fo:table-body>
+                        </fo:table>
+                    </fo:block>
+                </fo:static-content>
+
+                <fo:static-content flow-name="xsl-region-after">
+                    <fo:block xsl:use-attribute-sets="footer">
+                        <fo:block>
+                            <!--<fo:external-graphic scaling="uniform" content-width="scale-to-fit"
+                                                 src='url("images/logo-footer.png")' width="100%"
+                                                 height="100%"/>-->
+
+                            <fo:external-graphic scaling="uniform" content-width="scale-to-fit"
+                                                 src="url(https://s3-eu-west-1.amazonaws.com/examotive-test/images/logo-footer.png)"
+                                                 width="100%" height="100%"/>
+                        </fo:block>
+                        <fo:block xsl:use-attribute-sets="footer-address">
+                            <fo:inline>
+                                <xsl:value-of select="/invoice/sendingCompany/name"/>
+                            </fo:inline>
+                            <fo:block/>
+                            <fo:inline>
+                                <xsl:value-of select="/invoice/sendingCompany/street"/>
+                            </fo:inline>
+                            <fo:inline>
+                                <xsl:text> </xsl:text>
+                            </fo:inline>
+                             <fo:inline>
+                                <xsl:value-of select="/invoice/sendingCompany/streetNumber"/>
+                            </fo:inline>
+                            <fo:block/>
+                            <fo:inline>
+                                <xsl:value-of select="/invoice/sendingCompany/postalCode"/>
+                            </fo:inline>
+                            <fo:inline>
+                                <xsl:text> </xsl:text>
+                            </fo:inline>
+                            <fo:inline>
+                                <xsl:value-of select="/invoice/sendingCompany/state"/>
+                            </fo:inline>
+                            <fo:inline>
+                                <xsl:text> </xsl:text>
+                            </fo:inline>
+                            <fo:block/>
+                            <fo:inline>
+                                <!-- fo:basic-link>
+                                    <xsl:attribute name="external-destination">
+                                        <xsl:value-of select="/invoice/sendingCompany/id"/>
+                                    </xsl:attribute>
+                                </fo:basic-link-->
+                            </fo:inline>
+                            <fo:block/>
+                        </fo:block>
+                        <fo:block text-align="right" margin-top="-20px" margin-right="20px">
+                            Page
+                            <fo:page-number/>
+                            of
+                            <fo:page-number-citation ref-id="sequence"/>
+                        </fo:block>
+
+                    </fo:block>
+                </fo:static-content>
+
+                <fo:flow flow-name="xsl-region-body">
+                    <fo:block xsl:use-attribute-sets="body">
+                        <fo:block>
+                            <fo:block>
+                                <fo:table table-layout="fixed">
+                                    <fo:table-body>
+                                        <fo:table-row>
+                                            <fo:table-cell xsl:use-attribute-sets="table-cell info-box">
+                                                <fo:block>
+                                                    <fo:block xsl:use-attribute-sets="label-3">our information
+                                                    </fo:block>
+                                                    <fo:block xsl:use-attribute-sets="line"></fo:block>
+                                                    <fo:block xsl:use-attribute-sets="label-4">
+                                                        <xsl:value-of select="/invoice/sendingCompany/firstName"/>
+                                                    </fo:block>
+                                                    <fo:block xsl:use-attribute-sets="address">
+                                                        <fo:inline>
+							                                <xsl:value-of select="/invoice/sendingCompany/street"/>
+							                            </fo:inline>
+							                             <fo:inline>
+							                                <xsl:value-of select="/invoice/sendingCompany/streetNumber"/>
+							                            </fo:inline>
+							                            <fo:block/>
+							                            <fo:inline>
+							                                <xsl:value-of select="/invoice/sendingCompany/postalCode"/>
+							                            </fo:inline>
+							                            <fo:inline>
+							                                <xsl:text> </xsl:text>
+							                            </fo:inline>
+							                            <fo:inline>
+							                                <xsl:value-of select="/invoice/sendingCompany/state"/>
+							                            </fo:inline>
+                                                        <fo:block/>
+                                                        <fo:inline>
+                                                            <xsl:text>VAT </xsl:text>
+                                                            <xsl:value-of select="/invoice/vatPercentage"/>
+                                                        </fo:inline>
+                                                    </fo:block>
+                                                </fo:block>
+                                            </fo:table-cell>
+                                            <fo:table-cell xsl:use-attribute-sets="table-cell">
+                                                <fo:block></fo:block>
+                                            </fo:table-cell>
+                                            <fo:table-cell xsl:use-attribute-sets="table-cell info-box">
+                                                <fo:block>
+                                                    <fo:block xsl:use-attribute-sets="label-3">bill to</fo:block>
+                                                    <fo:block xsl:use-attribute-sets="line"></fo:block>
+                                                    <fo:block xsl:use-attribute-sets="label-4">
+                                                        <fo:inline>
+                                                            <xsl:value-of select="/invoice/user/firstName"/>
+                                                            <xsl:text> </xsl:text>
+                                                            <xsl:value-of select="/invoice/user/lastName"/>
+                                                        </fo:inline>
+                                                    </fo:block>
+                                                    <fo:block xsl:use-attribute-sets="address">
+                                                        <fo:inline>
+                                                            <xsl:value-of select="/invoice/user/street"/>
+                                                        </fo:inline>
+                                                        <fo:inline>
+                                                            <xsl:value-of select="/invoice/user/streetNumber"/>
+                                                        </fo:inline>
+                                                        <fo:block/>
+                                                        <fo:inline>
+                                                            <xsl:value-of select="/invoice/user/postalCode"/>
+                                                        </fo:inline>
+                                                        <fo:inline>
+                                                            <xsl:text> </xsl:text>
+                                                        </fo:inline>
+                                                        <fo:inline>
+                                                            <xsl:value-of select="/invoice/user/state"/>
+                                                        </fo:inline>
+                                                        <fo:inline>
+                                                            <xsl:text>, </xsl:text>
+                                                        </fo:inline>
+                                                        <fo:inline>
+                                                            <xsl:text>VAT </xsl:text>
+                                                            <xsl:value-of select="/invoice/vatPercentage"/>
+                                                        </fo:inline>
+                                                    </fo:block>
+                                                </fo:block>
+                                            </fo:table-cell>
+                                        </fo:table-row>
+                                    </fo:table-body>
+                                </fo:table>
+                            </fo:block>
+                            <fo:block xsl:use-attribute-sets="trip-table">
+                                <fo:table table-layout="fixed" margin-bottom="5px">
+
+                                    <fo:table-column column-width="30%"/>
+                                    <fo:table-column column-width="50%"/>
+                                    <fo:table-column column-width="20%"/>
+
+                                    <fo:table-body border-bottom="2px solid black">
+                                        <fo:table-cell xsl:use-attribute-sets="table-cell">
+                                            <fo:block xsl:use-attribute-sets="label-6">
+                                                <fo:inline>PRODUCT</fo:inline>
+                                            </fo:block>
+                                        </fo:table-cell>
+                                        <fo:table-cell xsl:use-attribute-sets="table-cell">
+                                            <fo:block xsl:use-attribute-sets="label-6">
+                                                <fo:inline>NOTICE</fo:inline>
+                                            </fo:block>
+                                        </fo:table-cell>
+                                        <fo:table-cell xsl:use-attribute-sets="table-cell">
+                                            <fo:block xsl:use-attribute-sets="label-6">
+                                                <fo:inline>TOTAL</fo:inline>
+                                            </fo:block>
+                                        </fo:table-cell>
+                                    </fo:table-body>
+
+                                </fo:table>
+
+                                <fo:table table-layout="fixed">
+
+                                    <fo:table-column column-width="30%"/>
+                                    <fo:table-column column-width="50%"/>
+                                    <fo:table-column column-width="20%"/>
+
+                                    <fo:table-body>
+                                        <xsl:for-each select="/invoice/resultBillingLines">
+                                            <fo:table-row>
+                                                <fo:table-cell xsl:use-attribute-sets="trip-table-cell-grey">
+                                                    <fo:block>
+                                                        <xsl:value-of select="product"/>
+                                                    </fo:block>
+                                                </fo:table-cell>
+                                                <fo:table-cell xsl:use-attribute-sets="trip-table-cell-grey">
+                                                    <fo:block-container xsl:use-attribute-sets="notice">
+                                                        <fo:block>
+                                                            <xsl:value-of select="notice"/>
+                                                            <!--<xsl:call-template name="format-notice">
+                                                                <xsl:with-param name="string" select="notice"/>
+                                                            </xsl:call-template>-->
+                                                        </fo:block>
+                                                    </fo:block-container>
+                                                </fo:table-cell>
+                                                <fo:table-cell xsl:use-attribute-sets="trip-table-cell-last-column">
+                                                    <fo:block>
+                                                        <xsl:value-of select="/invoice/currency"/>
+                                                        <xsl:text> </xsl:text>
+                                                        <xsl:value-of select="amount"/>
+                                                    </fo:block>
+                                                </fo:table-cell>
+                                            </fo:table-row>
+                                        </xsl:for-each>
+                                    </fo:table-body>
+
+                                </fo:table>
+                            </fo:block>
+                            <fo:block>
+                                <fo:table table-layout="fixed">
+
+                                    <fo:table-column column-width="60%"/>
+                                    <fo:table-column column-width="40%"/>
+
+                                    <fo:table-body>
+                                        <fo:table-row>
+                                            <fo:table-cell xsl:use-attribute-sets="table-cell" display-align="after">
+                                                <fo:block text-align="right" margin-right="100px">
+                                                    <!--<fo:external-graphic src="url(images/line.png)"/>-->
+                                                    <fo:external-graphic src="url(https://s3-eu-west-1.amazonaws.com/examotive-test/images/line.png)"/>
+                                                </fo:block>
+                                            </fo:table-cell>
+                                            <fo:table-cell xsl:use-attribute-sets="table-cell">
+                                                <fo:table table-layout="fixed">
+
+                                                    <fo:table-column column-width="50%"/>
+                                                    <fo:table-column column-width="50%"/>
+
+                                                    <fo:table-body>
+                                                        <fo:table-row>
+                                                            <fo:table-cell xsl:use-attribute-sets="trip-table-cell">
+                                                                <fo:block xsl:use-attribute-sets="label-5">
+                                                                    <fo:inline>SUBTOTAL</fo:inline>
+                                                                </fo:block>
+                                                            </fo:table-cell>
+                                                            <fo:table-cell
+                                                                    xsl:use-attribute-sets="trip-table-cell-last-column">
+                                                                <fo:block>
+                                                                    <fo:inline>
+                                                                        <xsl:value-of select="/invoice/currency"/>
+                                                                        <xsl:text> </xsl:text>
+                                                                        <xsl:value-of select="/invoice/subtotal"/>
+                                                                    </fo:inline>
+                                                                </fo:block>
+                                                            </fo:table-cell>
+                                                        </fo:table-row>
+                                                        <fo:table-row>
+                                                            <fo:table-cell xsl:use-attribute-sets="trip-table-cell">
+                                                                <fo:block xsl:use-attribute-sets="label-5">
+                                                                    <xsl:text>VAT - </xsl:text>
+                                                                    <xsl:value-of select="/invoice/vatPercentage"/>
+                                                                    <xsl:text>%</xsl:text>
+                                                                </fo:block>
+                                                            </fo:table-cell>
+                                                            <fo:table-cell
+                                                                    xsl:use-attribute-sets="trip-table-cell-last-column">
+                                                                <fo:block>
+                                                                    <xsl:value-of select="/invoice/currency"/>
+                                                                    <xsl:text> </xsl:text>
+                                                                    <xsl:value-of select="/invoice/vatAmount"/>
+                                                                </fo:block>
+                                                            </fo:table-cell>
+                                                        </fo:table-row>
+                                                        <fo:table-row>
+                                                            <fo:table-cell xsl:use-attribute-sets="trip-table-cell">
+                                                                <fo:block xsl:use-attribute-sets="label-5">
+                                                                    <fo:inline>TOTAL</fo:inline>
+                                                                </fo:block>
+                                                            </fo:table-cell>
+                                                            <fo:table-cell
+                                                                    xsl:use-attribute-sets="trip-table-cell-last-column">
+                                                                <fo:block>
+                                                                    <xsl:value-of select="/invoice/currency"/>
+                                                                    <xsl:text> </xsl:text>
+                                                                    <xsl:value-of select="/invoice/total"/>
+                                                                </fo:block>
+                                                            </fo:table-cell>
+                                                        </fo:table-row>
+                                                    </fo:table-body>
+                                                </fo:table>
+                                            </fo:table-cell>
+                                        </fo:table-row>
+                                    </fo:table-body>
+
+                                </fo:table>
+                            </fo:block>
+                            <fo:block margin-top="15px">
+                                <fo:block xsl:use-attribute-sets="label-5" margin-left="20px" text-align="left">
+                                    <fo:inline>NOTES</fo:inline>
+                                </fo:block>
+                                <fo:block xsl:use-attribute-sets="line"></fo:block>
+                                <fo:block xsl:use-attribute-sets="info-paragraph">
+                                    <xsl:value-of select="/invoice/note/title"/>
+                                </fo:block>
+                                <fo:block xsl:use-attribute-sets="info-paragraph">
+                                    <xsl:value-of select="/invoice/note/description"/>
+                                </fo:block>
+                            </fo:block>
+
+                            <fo:block break-after="page"></fo:block>
+
+                            <xsl:for-each select="/invoice/trips">
+                                <fo:block xsl:use-attribute-sets="trip-details">
+                                    <fo:table table-layout="fixed" xsl:use-attribute-sets="trip-details-header">
+                                        <fo:table-body>
+                                            <fo:table-row  xsl:use-attribute-sets="trip-details-header-1">
+                                                <fo:table-cell>
+                                                    <fo:block>
+                                                        <fo:inline>
+                                                            <xsl:value-of select="tripId"/>
+                                                            <xsl:text> - </xsl:text>
+                                                            <xsl:call-template name="format-dateTime">
+                                                                <xsl:with-param name="date" select="tripScheduledStartDate"/>
+                                                            </xsl:call-template>
+                                                            <xsl:text> till </xsl:text>
+                                                            <xsl:call-template name="format-dateTime">
+                                                                <xsl:with-param name="date" select="tripScheduledEndDate"/>
+                                                            </xsl:call-template>
+                                                        </fo:inline>
+                                                    </fo:block>
+                                                </fo:table-cell>
+                                            </fo:table-row>
+                                            <fo:table-row xsl:use-attribute-sets="trip-details-header-2">
+                                                <fo:table-cell>
+                                                    <fo:block>
+                                                        <fo:inline>
+                                                            <xsl:text>Trip dates - </xsl:text>
+                                                            <xsl:call-template name="format-dateTime">
+                                                                <xsl:with-param name="date" select="tripStartDate"/>
+                                                            </xsl:call-template>
+                                                            <xsl:text> till </xsl:text>
+                                                            <xsl:call-template name="format-dateTime">
+                                                                <xsl:with-param name="date" select="tripEndDate"/>
+                                                            </xsl:call-template>
+                                                        </fo:inline>
+                                                    </fo:block>
+                                                </fo:table-cell>
+                                            </fo:table-row>
+                                        </fo:table-body>
+                                    </fo:table>
+
+                                    <fo:table table-layout="fixed">
+
+                                        <fo:table-column column-width="60%"/>
+                                        <fo:table-column column-width="20%"/>
+                                        <fo:table-column column-width="20%"/>
+
+                                        <fo:table-body>
+                                            <xsl:for-each select="billingLines">
+                                                <fo:table-row>
+                                                    <fo:table-cell xsl:use-attribute-sets="trip-details-table-cell-left">
+                                                        <fo:block>
+                                                            <xsl:value-of select="product"/>
+                                                        </fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell xsl:use-attribute-sets="trip-details-table-cell-right">
+                                                        <fo:block>
+                                                            <xsl:value-of select="quantity"/>
+                                                        </fo:block>
+                                                    </fo:table-cell>
+                                                    <fo:table-cell xsl:use-attribute-sets="trip-details-table-cell-right">
+                                                        <fo:block>
+                                                            <xsl:value-of select="amount"/>
+                                                        </fo:block>
+                                                    </fo:table-cell>
+                                                </fo:table-row>
+                                            </xsl:for-each>
+                                        </fo:table-body>
+
+                                    </fo:table>
+                                </fo:block>
+                            </xsl:for-each>
+
+                        </fo:block>
+
+                        <fo:block id="sequence"/>
+                    </fo:block>
+                </fo:flow>
+
+            </fo:page-sequence>
+        </fo:root>
+    </xsl:template>
+
+</xsl:stylesheet>

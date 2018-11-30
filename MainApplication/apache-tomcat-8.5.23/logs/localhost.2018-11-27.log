@@ -1,0 +1,57 @@
+27-Nov-2018 15:15:16.819 INFO [localhost-startStop-82] org.apache.catalina.core.ApplicationContext.log Log4jServletContainerInitializer starting up Log4j in Servlet 3.0+ environment.
+27-Nov-2018 15:15:16.846 INFO [localhost-startStop-82] org.apache.catalina.core.ApplicationContext.log No Log4j context configuration provided. This is very unusual.
+27-Nov-2018 15:15:17.374 INFO [localhost-startStop-82] org.apache.catalina.core.ApplicationContext.log Log4jServletContextListener ensuring that Log4j starts up properly.
+27-Nov-2018 15:15:17.380 INFO [localhost-startStop-82] org.apache.catalina.core.ApplicationContext.log Log4jServletFilter initialized.
+27-Nov-2018 15:15:17.885 SEVERE [localhost-startStop-82] org.apache.catalina.core.StandardContext.filterStart Exception starting filter [guiceFilter]
+ javax.persistence.PersistenceException: Unable to configure EntityManagerFactory
+	at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:387)
+	at org.hibernate.ejb.HibernatePersistence.createEntityManagerFactory(HibernatePersistence.java:58)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at com.google.inject.persist.jpa.JpaPersistService.start(JpaPersistService.java:110)
+	at com.google.inject.persist.PersistFilter.init(PersistFilter.java:79)
+	at com.google.inject.servlet.FilterDefinition.init(FilterDefinition.java:112)
+	at com.google.inject.servlet.ManagedFilterPipeline.initPipeline(ManagedFilterPipeline.java:99)
+	at com.google.inject.servlet.GuiceFilter.init(GuiceFilter.java:220)
+	at org.apache.catalina.core.ApplicationFilterConfig.initFilter(ApplicationFilterConfig.java:285)
+	at org.apache.catalina.core.ApplicationFilterConfig.getFilter(ApplicationFilterConfig.java:266)
+	at org.apache.catalina.core.ApplicationFilterConfig.<init>(ApplicationFilterConfig.java:108)
+	at org.apache.catalina.core.StandardContext.filterStart(StandardContext.java:4591)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5233)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:752)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:728)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:734)
+	at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:988)
+	at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1860)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.RuntimeException: Error while reading file:/opt/apache-tomcat-8.5.23/webapps/ROOT/WEB-INF/classes/
+	at org.hibernate.ejb.packaging.NativeScanner.getClassesInJar(NativeScanner.java:131)
+	at org.hibernate.ejb.Ejb3Configuration.addScannedEntries(Ejb3Configuration.java:487)
+	at org.hibernate.ejb.Ejb3Configuration.addMetadataFromScan(Ejb3Configuration.java:477)
+	at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:363)
+	... 24 more
+Caused by: java.io.IOException: invalid constant type: 18
+	at javassist.bytecode.ConstPool.readOne(ConstPool.java:1113)
+	at javassist.bytecode.ConstPool.read(ConstPool.java:1056)
+	at javassist.bytecode.ConstPool.<init>(ConstPool.java:150)
+	at javassist.bytecode.ClassFile.read(ClassFile.java:765)
+	at javassist.bytecode.ClassFile.<init>(ClassFile.java:109)
+	at org.hibernate.ejb.packaging.AbstractJarVisitor.checkAnnotationMatching(AbstractJarVisitor.java:246)
+	at org.hibernate.ejb.packaging.AbstractJarVisitor.executeJavaElementFilter(AbstractJarVisitor.java:212)
+	at org.hibernate.ejb.packaging.AbstractJarVisitor.addElement(AbstractJarVisitor.java:173)
+	at org.hibernate.ejb.packaging.ExplodedJarVisitor.getClassNamesInTree(ExplodedJarVisitor.java:126)
+	at org.hibernate.ejb.packaging.ExplodedJarVisitor.getClassNamesInTree(ExplodedJarVisitor.java:134)
+	at org.hibernate.ejb.packaging.ExplodedJarVisitor.getClassNamesInTree(ExplodedJarVisitor.java:134)
+	at org.hibernate.ejb.packaging.ExplodedJarVisitor.getClassNamesInTree(ExplodedJarVisitor.java:134)
+	at org.hibernate.ejb.packaging.ExplodedJarVisitor.doProcessElements(ExplodedJarVisitor.java:92)
+	at org.hibernate.ejb.packaging.AbstractJarVisitor.getMatchingEntries(AbstractJarVisitor.java:149)
+	at org.hibernate.ejb.packaging.NativeScanner.getClassesInJar(NativeScanner.java:128)
+	... 27 more
+
+27-Nov-2018 15:15:17.888 INFO [localhost-startStop-82] org.apache.catalina.core.ApplicationContext.log Log4jServletFilter destroyed.
+27-Nov-2018 15:15:17.889 INFO [localhost-startStop-82] org.apache.catalina.core.ApplicationContext.log Log4jServletContextListener ensuring that Log4j shuts down properly.

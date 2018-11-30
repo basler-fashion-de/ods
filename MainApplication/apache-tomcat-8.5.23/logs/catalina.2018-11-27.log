@@ -1,0 +1,93 @@
+27-Nov-2018 15:14:03.624 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.undeploy Undeploying context []
+27-Nov-2018 15:14:03.627 INFO [localhost-startStop-81] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/opt/apache-tomcat-8.5.23/webapps/ROOT.war]
+27-Nov-2018 15:14:03.634 SEVERE [localhost-startStop-81] org.apache.catalina.startup.ContextConfig.beforeStart Exception fixing docBase for context []
+ java.util.zip.ZipException: error in opening zip file
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(ZipFile.java:225)
+	at java.util.zip.ZipFile.<init>(ZipFile.java:155)
+	at java.util.jar.JarFile.<init>(JarFile.java:166)
+	at java.util.jar.JarFile.<init>(JarFile.java:103)
+	at sun.net.www.protocol.jar.URLJarFile.<init>(URLJarFile.java:93)
+	at sun.net.www.protocol.jar.URLJarFile.getJarFile(URLJarFile.java:69)
+	at sun.net.www.protocol.jar.JarFileFactory.get(JarFileFactory.java:99)
+	at sun.net.www.protocol.jar.JarURLConnection.connect(JarURLConnection.java:122)
+	at sun.net.www.protocol.jar.JarURLConnection.getJarFile(JarURLConnection.java:89)
+	at org.apache.catalina.startup.ExpandWar.expand(ExpandWar.java:130)
+	at org.apache.catalina.startup.ContextConfig.fixDocBase(ContextConfig.java:615)
+	at org.apache.catalina.startup.ContextConfig.beforeStart(ContextConfig.java:748)
+	at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:301)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:94)
+	at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:395)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:149)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:752)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:728)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:734)
+	at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:988)
+	at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1860)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+27-Nov-2018 15:14:03.636 SEVERE [localhost-startStop-81] org.apache.catalina.core.ContainerBase.addChildInternal ContainerBase.addChild: start: 
+ org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[]]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:167)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:752)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:728)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:734)
+	at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:988)
+	at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1860)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@6b13d1e6]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:167)
+	at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4860)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4995)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	... 10 more
+Caused by: org.apache.catalina.LifecycleException: Failed to initialize component [org.apache.catalina.webresources.WarResourceSet@65d4332c]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:113)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:140)
+	at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:714)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	... 13 more
+Caused by: java.lang.IllegalArgumentException: java.util.zip.ZipException: error in opening zip file
+	at org.apache.catalina.webresources.AbstractSingleArchiveResourceSet.initInternal(AbstractSingleArchiveResourceSet.java:113)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107)
+	... 16 more
+Caused by: java.util.zip.ZipException: error in opening zip file
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(ZipFile.java:225)
+	at java.util.zip.ZipFile.<init>(ZipFile.java:155)
+	at java.util.jar.JarFile.<init>(JarFile.java:166)
+	at java.util.jar.JarFile.<init>(JarFile.java:103)
+	at org.apache.catalina.webresources.AbstractSingleArchiveResourceSet.initInternal(AbstractSingleArchiveResourceSet.java:110)
+	... 17 more
+
+27-Nov-2018 15:14:03.637 SEVERE [localhost-startStop-81] org.apache.catalina.startup.HostConfig.deployWAR Error deploying web application archive [/opt/apache-tomcat-8.5.23/webapps/ROOT.war]
+ java.lang.IllegalStateException: ContainerBase.addChild: start: org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[]]
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:756)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:728)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:734)
+	at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:988)
+	at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1860)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+27-Nov-2018 15:14:03.637 INFO [localhost-startStop-81] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/opt/apache-tomcat-8.5.23/webapps/ROOT.war] has finished in [10] ms
+27-Nov-2018 15:15:13.640 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.undeploy Undeploying context []
+27-Nov-2018 15:15:13.642 INFO [localhost-startStop-82] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/opt/apache-tomcat-8.5.23/webapps/ROOT.war]
+27-Nov-2018 15:15:17.671 INFO [localhost-startStop-82] org.hibernate.annotations.common.Version.<clinit> HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+27-Nov-2018 15:15:17.687 INFO [localhost-startStop-82] org.hibernate.Version.logVersion HHH000412: Hibernate Core {4.2.6.Final}
+27-Nov-2018 15:15:17.695 INFO [localhost-startStop-82] org.hibernate.cfg.Environment.<clinit> HHH000206: hibernate.properties not found
+27-Nov-2018 15:15:17.696 INFO [localhost-startStop-82] org.hibernate.cfg.Environment.buildBytecodeProvider HHH000021: Bytecode provider name : javassist
+27-Nov-2018 15:15:17.886 SEVERE [localhost-startStop-82] org.apache.catalina.core.StandardContext.startInternal One or more Filters failed to start. Full details will be found in the appropriate container log file
+27-Nov-2018 15:15:17.886 SEVERE [localhost-startStop-82] org.apache.catalina.core.StandardContext.startInternal Context [] startup failed due to previous errors
+27-Nov-2018 15:15:17.894 INFO [localhost-startStop-82] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/opt/apache-tomcat-8.5.23/webapps/ROOT.war] has finished in [4,252] ms
